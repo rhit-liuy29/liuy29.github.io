@@ -38,11 +38,9 @@ a:hover{
 
 body#about img{
     height: 18em;
-}
-
-#profilePic{
-    float: left;
+    display: inline;
     margin-right: 20px;
+    margin-right: var(--horizontal-spacing);
 }
 
 body{
@@ -72,6 +70,10 @@ body{
     body > nav ul{
         float: right;
     }
+    body#about img{
+        float: left;
+        margin-bottom: var(--horizontal-spacing);
+    }
 } 
 
 body > *{
@@ -88,7 +90,7 @@ body > nav{
 }
 
 body > main > *:first-child{
-    border-top: 2px solid var(--subheading-color);
+    border-top: 2px solid #41729F;
     padding-top: var(--vertical-spacing);
 }
 
