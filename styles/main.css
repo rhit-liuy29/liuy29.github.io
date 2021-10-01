@@ -90,7 +90,7 @@ body > nav{
 }
 
 body > main > *:first-child{
-    border-top: 2px solid #41729F;
+    border-top: 2px solid var(--subheading-color);
     padding-top: var(--vertical-spacing);
 }
 
@@ -148,4 +148,32 @@ body#portfolio ul#portfolioItems{
 
 body#portfolio ul#portfolioItems li img{
     max-width: 100%;
+}
+
+body.dark{
+    color: white;
+    background: black;
+}
+
+body.dark a{
+    color: white;
+}
+
+body.dark a:hover{
+    color: var(--contrast-color);
+}
+
+body.dark button{
+    color: white;
+    background: black;
+    border: 1px solid white;
+    border-radius: 2px;
+}
+
+body.dark h1, body.dark h2, body.dark h3{
+    color: #9F9FFF;
+}
+
+body.dark > main > *:first-child{
+    border-top: 2px solid #880ED4;
 }

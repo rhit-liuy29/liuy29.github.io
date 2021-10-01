@@ -1,16 +1,5 @@
-/**
- * @fileoverview
- * Provides the JavaScript interactions for all pages.
- *
- * @author 
- * Ian Liu
- */
-
-/** namespace. */
 var rhit = rhit || {};
 
-/* Main */
-/** function and class syntax examples */
 
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("Ready");
@@ -25,8 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 });
 
-rhit.main = function () {
-    console.log("Ready");
+rhit.main = function(){
     const button = document.querySelector(".lightSwitch");
     button.addEventListener("click", (event) => {
         if (document.querySelector("body").classList.contains("dark")) {
@@ -38,9 +26,8 @@ rhit.main = function () {
             button.innerHTML = "Light Mode";
             localStorage.setItem("darkMode", true);
         }
-    });
-    console.log("object1");
-
-};
+    })
+    console.log("object2");
+}
 
 rhit.main();
