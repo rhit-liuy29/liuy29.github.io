@@ -8,8 +8,9 @@
     /* Need to find a good color theme for heading, body, and bg */
     --light-color: #F2F2F2;
     --body-color: #404040;
-    --heading-color: #8F8ABF;
-    --contrast-color: #75728F;
+    --heading-color: #2d4c77;
+    --contrast-color: #D97059;
+    --subheading-color: #6D0D91;
 }
 
 body{
@@ -17,23 +18,23 @@ body{
     line-height: 1.5;
     font-family: 'Raleway', sans-serif;
     background-image: repeating-linear-gradient(90deg, hsla(196,0%,79%,0.06) 0px, hsla(196,0%,79%,0.06) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, hsla(196,0%,79%,0.06) 0px, hsla(196,0%,79%,0.06) 1px,transparent 1px, transparent 96px),repeating-linear-gradient(0deg, hsla(196,0%,79%,0.09) 0px, hsla(196,0%,79%,0.09) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(90deg, hsla(196,0%,79%,0.09) 0px, hsla(196,0%,79%,0.09) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, rgb(255,255,255),rgb(255,255,255));
-    /* color: var(--body-color); */
+    color: var(--body-color);
 }
 
 h1, h2, h3{
     line-height: 1.2;
     font-family: 'Klee One', cursive;
-    /* color: var(--heading-color); */
+    color: var(--heading-color);
 }
 
-/* a{
+a{
     color: var(--body-color);
     text-decoration-color: var(--contrast-color);
 }
 
 a:hover{
     color: var(--contrast-color);
-} */
+}
 
 body#about img{
     height: 18em;
@@ -44,17 +45,13 @@ body#about img{
     margin-right: 20px;
 }
 
-p{
-    max-width: 50em;
-}
-
 body{
     display: grid;
     grid-template-areas: "head head"
                          "nav  nav"
                          "main  main"
                          "foot foot";
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: auto 5fr;
     /* fr is the rest of the space available */
     grid-template-rows: auto, auto, 1fr, auto;
 }
@@ -62,19 +59,26 @@ body{
 @media screen and (min-width: 25em){
     body{
     display: grid;
-    grid-template-areas: "head head"
-                         "nav  main"
+    grid-template-areas: "head nav"
+                         "main  main"
                          "foot foot";
-    grid-template-columns: 1fr 5fr;
+  
     /* fr is the rest of the space available */
-    grid-template-rows: auto, 1fr, auto
+     grid-template-rows: auto, 1fr, auto
     }
-}
+    body > nav{
+        padding-top: var(--vertical-spacing);
+    }
+    body > nav ul{
+        float: right;
+    }
+} 
 
 body > *{
     padding-left: var(--horizontal-spacing);
     padding-right: var(--horizontal-spacing);
 }
+
 body > header{
     grid-area: head;
 }
@@ -83,9 +87,25 @@ body > nav{
     grid-area: nav;
 }
 
+body > main > *:first-child{
+    border-top: 2px solid var(--subheading-color);
+    padding-top: var(--vertical-spacing);
+}
+
+body{
+    max-width: 65rem;
+}
+
 body > nav ul{
     list-style-type: none;
     padding: 0;
+    margin: 0;
+    line-height: 2.4;
+}
+
+body > nav ul li{
+    display: inline-block;
+    padding-right: 1em;
 }
 
 body > main{
@@ -99,6 +119,10 @@ body > footer{
 header, footer {
     padding-top: var(--vertical-spacing);
     padding-bottom: var(--vertical-spacing);
+}
+
+header{
+    padding-bottom: 0;
 }
 
 header h1, footer h1{
